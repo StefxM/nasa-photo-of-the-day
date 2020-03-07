@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 
+import styled from 'styled-components';
+
+
+
 function App() {
       //variable//function
   const [nasa, setNasa] = useState({});
@@ -12,17 +16,26 @@ function App() {
     setNasa(response.data);
     })
   }, [])
+
+  const prettydate = styled.dateContainer`
+    border: 2px dotted blue;
+    padding : 
+
+  `;
+
+
   return (//executes first
     <div className="App">
-      <p>
+      <p className="dateContainer">
         {nasa.date}
       </p>
-      <p>
+      <p className="exContainer">
         {nasa.explanation}
       </p>
-
-      <img src={nasa.url}>
+      
+      <img className="picBox" src={nasa.url}>
       </img>
+
     </div>
   );
 }
