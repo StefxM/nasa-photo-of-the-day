@@ -17,25 +17,26 @@ function App() {
     })
   }, [])
 
-  const prettydate = styled.dateContainer`
-    border: 2px dotted blue;
-    padding : 
+  const PrettyDiv = styled.div`
+    border: 5px dotted purple;
+    color: gray;
 
   `;
 
 
   return (//executes first
+    <PrettyDiv>
     <div className="App">
-      <p className="dateContainer">
+      <p>
         {nasa.date}
       </p>
-      <p className="exContainer">
+      <p >
         {nasa.explanation}
       </p>
       
-      <img className="picBox" src={nasa.url}>
+      <img src={nasa.url}>
       </img>
-
+      </PrettyDiv>
     </div>
   );
 }
