@@ -17,27 +17,40 @@ function App() {
     })
   }, [])
 
-  const PrettyDiv = styled.div`
-    border: 5px dotted purple;
-    color: gray;
-
+  const BackgroundDiv = styled.div`
+    color: white;
+    border: 5px dotted #61dafb;
+    padding: 2%;
+    display: flex;
   `;
 
+  const ImgP = styled.img`
+    width: 50%;
+    height: 60%;
+    padding: 2%;
+  `;
+
+  const PaddingP = styled.p`
+    padding: 2%;
+    color: #e600e6;
+  `;
 
   return (//executes first
-    <PrettyDiv>
-    <div className="App">
-      <p>
-        {nasa.date}
-      </p>
-      <p >
+    
+    <BackgroundDiv>
+      <div>
+      <h1>{nasa.title}</h1>
+      <h2>{nasa.date}</h2>
+      </div>
+     
+      <PaddingP>
         {nasa.explanation}
-      </p>
+      </PaddingP>
       
-      <img src={nasa.url}>
-      </img>
-      </PrettyDiv>
-    </div>
+      <ImgP src={nasa.url} alt='nasas pic'>
+      </ImgP>
+     
+      </BackgroundDiv>
   );
 }
 
